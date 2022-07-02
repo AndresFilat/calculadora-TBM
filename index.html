@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./static/img/Calculator_icon.svg.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+    <link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  	/>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="text-center">
+                        Calculadora de calorias
+                    </h1>
+
+                    <hr>
+
+                    <form id="form-calculator">
+                        <label for="age">Edad:</label><br>
+                        <input type="number" name="age" id="age" placeholder="(ejemplo: 18)"><br>
+                        <span class="error d-none"></span><br>
+                        <label for="weight">Peso:</label><br>
+                        <input type="number" name="weight" id="weight" placeholder="(ejemplo: 57)"><br>
+                        <span class="error d-none"></span><br>
+                        <label for="height">Altura:</label><br>
+                        <input type="number" name="height" id="height" placeholder="(ejemplo: 180)"><br>
+                        <span class="error d-none"></span><br>
+
+                        <label for="physical-activity">Actividad fisica:</label><br>
+                        <select name="physical-activity" id="physical-activity">
+                            <option value="1.2">Poco o ningún ejercicio</option>
+                            <option value="1.375">Ejercicio ligero (1-3 días a la semana)</option>
+                            <option value="1.55">Ejercicio moderado (3-5 días a la semana)</option>
+                            <option value="1.725">Ejercicio fuerte (6-7 días a la semana)</option>
+                            <option value="1.9">Ejercicio muy fuerte (dos veces al día, entrenamientos muy duros)</option>
+                        </select><br><br>
+                        
+                        <label for="gender">Sexo:</label><br>
+                        <div class="form-check div-radio">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="female" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Femenino
+                            </label>
+                        </div>
+                        <div class="form-check div-radio">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="male">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Masculino
+                            </label>
+                        </div>
+                        
+                        <center>
+                            <input type="submit" class="btn btn-outline-info" id="calculate" value="Calcular" />
+                        </center>
+                    </form>
+                </div>
+                <div class="col-6 align-self-center d-none text-center animate__animated" id="result-container">
+                    <p id="result" class="text-start"></p>
+                    <br>
+                    <button type="button" class="btn btn-outline-light" onclick="print()">Descargar reporte</button>
+                    <button type="button" class="btn btn-outline-light" onclick="window.open('https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_Harris-Benedict')">Hagalo usted mismo!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="modal-data">
+            <div class="container">
+                <div class="row" style="height: 100vh;">
+                    <div class="col-6 align-self-center animate__animated animate__jackInTheBox" style="margin: auto;background-color: white;padding: 2rem;border-radius: 10px;color: black;border: 1px solid black;">
+                        <h2 class="text-center">Datos del usuario</h2>
+                        <label for="name">Nombre:</label>
+                        <input type="text" name="name" id="name-user" placeholder="(ejemplo: Andres)"><br>
+                        <span class="error d-none"></span><br>
+
+                        <label for="document-type">Tipo de documento:</label>
+                        <select name="document-type" id="document-type-user">
+                            <option value="T.I">T.I</option>
+                            <option value="C.C">C.C</option>
+                            <option value="C.E">C.E</option>
+                        </select><br><br>
+
+                        <label for="document">Documento:</label>
+                        <input type="number" name="document" id="document-user" placeholder="(ejemplo: 1234567890)"><br>
+                        <span class="error d-none"></span>
+                        <center>
+                            <input type="submit" class="btn btn-info" id="submit-data-user" value="Listo!">
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/index.js"></script>
+</body>
+</html>
