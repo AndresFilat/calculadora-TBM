@@ -69,6 +69,7 @@ const paramsBMR = {
             <h2 class="text-center">${population}</h2>
             <hr />
             <i>Paciente:</i> ${$name_user.value}<br />
+            <i>Genero:</i> ${$female.checked ? 'Femenino ♀' : 'Masculino ♂'}<br />
             <i>Tipo de documento:</i> ${$document_type_user.value}<br />
             <i>Numero de documento:</i> ${$document_user.value}
             <hr />
